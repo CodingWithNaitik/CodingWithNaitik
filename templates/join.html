@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{url_for('.static', filename='styles/stylechatjoin.css')}}">
+
+
+<form method="post" class="buttons">
+  <div class = "joining" name="joining">
+    <h3>Enter The Chat Room</h3>
+    <div>
+      <label>Name:</label>
+      <input
+        type="text"
+        placeholder="Pick a name!"
+        name="name"
+        value="{{name}}"
+      />
+    </div>
+    <div class="join">
+      <button type="submit" name="join1"class="join1">Naitik</button>
+    </div>
+    <div class="join">
+      <button type="submit" name="join2"class="join2">Hridayan</button>
+    </div>
+    <div class="join">
+      <button type="submit" name="join3"class="join3">Nikunj</button>
+    </div>
+    <button type="submit" name="create" class="create-btn">Join the Room</button>
+  </div>
+
+    {% if error %}
+  <ul>
+    <li>{{error}}</li>
+  </ul>
+  {% endif %}
+</form>
+{% endblock %}
